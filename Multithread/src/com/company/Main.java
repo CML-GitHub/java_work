@@ -5,9 +5,9 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
 public class Main {
-    static int THREADS_NUMBERS = 10;
-    static int LENGTH = 12000;                      //  矩阵维数
-    public static int[][] Construct_Matrix(int a[][]) {           //构造矩阵
+    static int THREADS_NUMBERS = 15;
+    static int LENGTH = 10000;                      //  矩阵维数
+    public static void Construct_Matrix(int a[][]) {           //构造矩阵
         for (int i = 0; i < a.length; i++) {
             for (int j = 0; j < LENGTH; j++) {
                 double d = Math.random();
@@ -15,7 +15,6 @@ public class Main {
                 a[i][j] = b;
             }
         }
-        return a;
     }
     
     public static void Output_Matrix(int a[][]){            //输出矩阵
@@ -28,15 +27,15 @@ public class Main {
     }
     public static void main(String[] args) throws InterruptedException{
         // write your code here
-       /* int A[][] = new int[LENGTH][LENGTH];
-        int B[][] = new int[LENGTH][LENGTH];*/
-        int A[][] = Construct_Matrix(new int[LENGTH][LENGTH]);
-        int B[][] = Construct_Matrix(new int[LENGTH][LENGTH]);
+        int A[][] = new int[LENGTH][LENGTH];
+        int B[][] = new int[LENGTH][LENGTH];
+        Construct_Matrix(A);
+        Construct_Matrix(B);
         
-        System.out.println("-----------矩阵A-----------");
+       /* System.out.println("-----------矩阵A-----------");
         Output_Matrix(A);
         System.out.println("-----------矩阵B-----------");
-        Output_Matrix(B);
+        Output_Matrix(B);*/
         System.out.println("--------------------------");
     
         long StartTime = System.currentTimeMillis();          //开始时间
